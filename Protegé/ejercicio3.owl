@@ -1,0 +1,50 @@
+Prefix(:=<http://www.semanticweb.org/javie/ontologies/2022/0/untitled-ontology-22#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://www.semanticweb.org/javie/ontologies/2022/0/untitled-ontology-22>
+
+Declaration(Class(:Periodico))
+Declaration(Class(:PeriodicoCalidad))
+Declaration(Class(:PeriodicoSensacionalista))
+Declaration(Class(:PeriodicoSerio))
+Declaration(Class(:Publicacion))
+Declaration(Class(:Revista))
+Declaration(Class(:TapaRoja))
+############################
+#   Classes
+############################
+
+# Class: :Periodico (:Periodico)
+
+EquivalentClasses(:Periodico :PeriodicoSensacionalista)
+EquivalentClasses(:Periodico :PeriodicoSerio)
+DisjointClasses(:Periodico :Publicacion)
+
+# Class: :PeriodicoCalidad (:PeriodicoCalidad)
+
+SubClassOf(:PeriodicoCalidad :PeriodicoSerio)
+
+# Class: :PeriodicoSensacionalista (:PeriodicoSensacionalista)
+
+SubClassOf(:PeriodicoSensacionalista :Periodico)
+DisjointClasses(:PeriodicoSensacionalista :PeriodicoSerio)
+
+# Class: :PeriodicoSerio (:PeriodicoSerio)
+
+SubClassOf(:PeriodicoSerio :Periodico)
+
+# Class: :Revista (:Revista)
+
+SubClassOf(:Revista :Publicacion)
+
+# Class: :TapaRoja (:TapaRoja)
+
+SubClassOf(:TapaRoja :PeriodicoSensacionalista)
+
+
+)

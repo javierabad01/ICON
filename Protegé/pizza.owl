@@ -1,0 +1,647 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:absolute:pizza#"
+     xml:base="urn:absolute:pizza"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:pizza="urn:absolute:pizza#">
+    <owl:Ontology rdf:about="urn:absolute:pizza">
+        <rdfs:comment>Ontology to describe pizza world</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:pizza#hasBase -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#hasBase">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:pizza#hasIngredient"/>
+        <owl:inverseOf rdf:resource="urn:absolute:pizza#isBaseOf"/>
+        <rdfs:domain rdf:resource="urn:absolute:pizza#Pizza"/>
+        <rdfs:range rdf:resource="urn:absolute:pizza#PizzaBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:pizza#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#hasIngredient">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="urn:absolute:pizza#isIngedientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:pizza#hasSpiciness -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#hasSpiciness">
+        <rdfs:domain rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+        <rdfs:range rdf:resource="urn:absolute:pizza#Spiciness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:pizza#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#hasTopping">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:pizza#hasIngredient"/>
+        <owl:inverseOf rdf:resource="urn:absolute:pizza#isToppingOf"/>
+        <rdfs:domain rdf:resource="urn:absolute:pizza#Pizza"/>
+        <rdfs:range rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:pizza#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:pizza#isIngedientOf"/>
+        <rdfs:domain rdf:resource="urn:absolute:pizza#PizzaBase"/>
+        <rdfs:range rdf:resource="urn:absolute:pizza#Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:pizza#isIngedientOf -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#isIngedientOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- urn:absolute:pizza#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="urn:absolute:pizza#isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="urn:absolute:pizza#isIngedientOf"/>
+        <rdfs:domain rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+        <rdfs:range rdf:resource="urn:absolute:pizza#Pizza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:pizza#AmericanaHotPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#AmericanaHotPizza">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#JalapenoPepperTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#MozzarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#PepperoniTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#AmericanaPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#AmericanaPizza">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#NamedPizza"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#AnchovyTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#AnchovyTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#SeafoodTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#CaperTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#CaperTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#CheeseTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#CheeseTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#CheesyPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#CheesyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="urn:absolute:pizza#CheeseTopping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#DeepPanBase -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#DeepPanBase">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PizzaBase"/>
+        <owl:disjointWith rdf:resource="urn:absolute:pizza#ThinAndCrispyBase"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#GreenPepperTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#GreenPepperTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PepperTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#HamTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#HamTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#JalapenoPepperTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#JalapenoPepperTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PepperTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasSpiciness"/>
+                <owl:hasValue rdf:resource="urn:absolute:pizza#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#MargheritaPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#MargheritaPizza">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#CheeseTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="urn:absolute:pizza#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="urn:absolute:pizza#TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#MeatTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#MeatTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#MozzarellaTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#MozzarellaTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#CheeseTopping"/>
+        <owl:disjointWith rdf:resource="urn:absolute:pizza#ParmesanTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#MushroomTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#MushroomTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#NamedPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#NamedPizza">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#OliveTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#OliveTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#ParmesanTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#ParmesanTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#CheeseTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#PepperTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#PepperTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#PepperoniTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#PepperoniTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#Pizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#Pizza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasBase"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#PizzaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#PizzaBase -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#PizzaBase"/>
+    
+
+
+    <!-- urn:absolute:pizza#PizzaTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#PizzaTopping"/>
+    
+
+
+    <!-- urn:absolute:pizza#PrawnTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#PrawnTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#SeafoodTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#RedPepperTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#RedPepperTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PepperTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#SalamiTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#SalamiTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#SeafoodTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#SeafoodTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#SohoPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#SohoPizza">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#MozzarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#OliveTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#ParmesanTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="urn:absolute:pizza#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="urn:absolute:pizza#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="urn:absolute:pizza#OliveTopping"/>
+                            <rdf:Description rdf:about="urn:absolute:pizza#ParmesanTopping"/>
+                            <rdf:Description rdf:about="urn:absolute:pizza#TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#Spiciness -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#Spiciness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:pizza#Hot"/>
+                    <rdf:Description rdf:about="urn:absolute:pizza#Medium"/>
+                    <rdf:Description rdf:about="urn:absolute:pizza#Mild"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#SpicyBeefTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#SpicyBeefTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#SpicyPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#SpicyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:pizza#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="urn:absolute:pizza#hasSpiciness"/>
+                                <owl:hasValue rdf:resource="urn:absolute:pizza#Hot"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#ThinAndCrispyBase -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#ThinAndCrispyBase">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PizzaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#TomatoTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#TomatoTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#TunaTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#TunaTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#SeafoodTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#VegetableTopping -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#VegetableTopping">
+        <rdfs:subClassOf rdf:resource="urn:absolute:pizza#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:absolute:pizza#VegetarianPizza -->
+
+    <owl:Class rdf:about="urn:absolute:pizza#VegetarianPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="urn:absolute:pizza#Pizza"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="urn:absolute:pizza#CheeseTopping"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="urn:absolute:pizza#hasTopping"/>
+                                <owl:allValuesFrom rdf:resource="urn:absolute:pizza#VegetableTopping"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:absolute:pizza#DeepPanBase1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:pizza#DeepPanBase1">
+        <rdf:type rdf:resource="urn:absolute:pizza#DeepPanBase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:pizza#Hot -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:pizza#Hot">
+        <rdf:type rdf:resource="urn:absolute:pizza#Spiciness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:pizza#Medium -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:pizza#Medium">
+        <rdf:type rdf:resource="urn:absolute:pizza#Spiciness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:pizza#Mild -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:pizza#Mild">
+        <rdf:type rdf:resource="urn:absolute:pizza#Spiciness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:absolute:pizza#Pizza1 -->
+
+    <owl:NamedIndividual rdf:about="urn:absolute:pizza#Pizza1">
+        <rdf:type rdf:resource="urn:absolute:pizza#Pizza"/>
+        <hasBase rdf:resource="urn:absolute:pizza#DeepPanBase1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:pizza#AnchovyTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#PrawnTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#TunaTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:pizza#CaperTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#MushroomTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#OliveTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#TomatoTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:pizza#CheeseTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#MeatTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#SeafoodTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#VegetableTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:pizza#GreenPepperTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#JalapenoPepperTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#RedPepperTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:pizza#HamTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#PepperoniTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#SalamiTopping"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#SpicyBeefTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:absolute:pizza#Pizza"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#PizzaBase"/>
+            <rdf:Description rdf:about="urn:absolute:pizza#PizzaTopping"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

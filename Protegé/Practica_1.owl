@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#"
+     xml:base="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Práctica_1="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esAscendente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esAscendente">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esDescendiente"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esDescendiente -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esDescendiente">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esHermano -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esHermano">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esPareja -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esPareja">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#esHermano"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora"/>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Eugenia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Eugenia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Lucia"/>
+        <esPareja rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Pedro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Juan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Juan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Luis"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Maria"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Sandra"/>
+        <esPareja rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Lucia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Lucia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Lucia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Luis"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Maria"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Sandra"/>
+        <esPareja rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Juan"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Luis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Luis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <esHermano rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Maria"/>
+        <esHermano rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Sandra"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Maria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Maria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <esHermano rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Luis"/>
+        <esHermano rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Sandra"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Pedro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Pedro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+        <esAscendente rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Lucia"/>
+        <esPareja rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Eugenia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Sandra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Sandra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+        <esHermano rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Luis"/>
+        <esHermano rdf:resource="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Maria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#Persona"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaAntecesora"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/jhon/ontologies/2021/10/Práctica_1#PersonaConPareja"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

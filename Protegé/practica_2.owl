@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/javie/ontologies/2021/10/practica_1#"
+     xml:base="http://www.semanticweb.org/javie/ontologies/2021/10/practica_1"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:practica_2="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esDescendienteDe"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esDescendienteDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esDescendienteDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esHermanoDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esHermanoDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esHijaDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esHijaDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esDescendienteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Mujer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esHijoDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esHijoDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esDescendienteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Hombre"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esMadreDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esMadreDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Mujer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esPadreDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esPadreDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Hombre"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esParejaDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esParejaDe">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#tieneGenero -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#tieneGenero">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Genero"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#edad -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#edad">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Genero -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Genero">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Femenino"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Masculino"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Hombre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Hombre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#tieneGenero"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Masculino"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Madre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Madre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Mujer"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Mujer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Mujer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#tieneGenero"/>
+                        <owl:hasValue rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Femenino"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Padre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Padre">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Hombre"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#edad"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#PersonaMayor65 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#PersonaMayor65">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#edad"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#PersonaMenorEdad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#PersonaMenorEdad">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#edad"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#tieneDescendenciaYpareja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#tieneDescendenciaYpareja">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esAscendenteDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#esParejaDe"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Persona"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Eugenia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Eugenia">
+        <practica_2:esMadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia"/>
+        <practica_2:esParejaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Pedro"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">72</practica_2:edad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Femenino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Femenino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Genero"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Juan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Juan">
+        <practica_2:esPadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Luis"/>
+        <practica_2:esPadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Maria"/>
+        <practica_2:esPadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Sandra"/>
+        <practica_2:esParejaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</practica_2:edad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia">
+        <practica_2:esHijaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Eugenia"/>
+        <practica_2:esHijaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Pedro"/>
+        <practica_2:esMadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Luis"/>
+        <practica_2:esMadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Maria"/>
+        <practica_2:esMadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Sandra"/>
+        <practica_2:esParejaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Juan"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</practica_2:edad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Luis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Luis">
+        <practica_2:esHermanoDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Maria"/>
+        <practica_2:esHijoDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Juan"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</practica_2:edad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Maria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Maria">
+        <practica_2:esHermanoDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Sandra"/>
+        <practica_2:esHijaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</practica_2:edad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Masculino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Masculino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Genero"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Pedro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Pedro">
+        <practica_2:esPadreDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia"/>
+        <practica_2:esParejaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Eugenia"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</practica_2:edad>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Sandra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Sandra">
+        <practica_2:esHermanoDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Luis"/>
+        <practica_2:esHijaDe rdf:resource="http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#Lucia"/>
+        <practica_2:edad rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</practica_2:edad>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

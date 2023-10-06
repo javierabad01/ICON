@@ -1,0 +1,219 @@
+Prefix(:=<http://www.semanticweb.org/javie/ontologies/2021/10/practica_1#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(practica_2:=<http://www.semanticweb.org/javie/ontologies/2021/10/practica_2#>)
+
+
+Ontology(<http://www.semanticweb.org/javie/ontologies/2021/10/practica_2>
+
+Declaration(Class(practica_2:Genero))
+Declaration(Class(practica_2:Hombre))
+Declaration(Class(practica_2:Madre))
+Declaration(Class(practica_2:Mujer))
+Declaration(Class(practica_2:Padre))
+Declaration(Class(practica_2:Persona))
+Declaration(Class(practica_2:PersonaMayor65))
+Declaration(Class(practica_2:PersonaMenorEdad))
+Declaration(Class(practica_2:tieneDescendenciaYpareja))
+Declaration(ObjectProperty(practica_2:esAscendenteDe))
+Declaration(ObjectProperty(practica_2:esDescendienteDe))
+Declaration(ObjectProperty(practica_2:esHermanoDe))
+Declaration(ObjectProperty(practica_2:esHijaDe))
+Declaration(ObjectProperty(practica_2:esHijoDe))
+Declaration(ObjectProperty(practica_2:esMadreDe))
+Declaration(ObjectProperty(practica_2:esPadreDe))
+Declaration(ObjectProperty(practica_2:esParejaDe))
+Declaration(ObjectProperty(practica_2:tieneGenero))
+Declaration(DataProperty(practica_2:edad))
+Declaration(NamedIndividual(practica_2:Eugenia))
+Declaration(NamedIndividual(practica_2:Femenino))
+Declaration(NamedIndividual(practica_2:Juan))
+Declaration(NamedIndividual(practica_2:Lucia))
+Declaration(NamedIndividual(practica_2:Luis))
+Declaration(NamedIndividual(practica_2:Maria))
+Declaration(NamedIndividual(practica_2:Masculino))
+Declaration(NamedIndividual(practica_2:Pedro))
+Declaration(NamedIndividual(practica_2:Sandra))
+############################
+#   Object Properties
+############################
+
+# Object Property: practica_2:esAscendenteDe (practica_2:esAscendenteDe)
+
+SubObjectPropertyOf(practica_2:esAscendenteDe owl:topObjectProperty)
+InverseObjectProperties(practica_2:esAscendenteDe practica_2:esDescendienteDe)
+TransitiveObjectProperty(practica_2:esAscendenteDe)
+ObjectPropertyDomain(practica_2:esAscendenteDe practica_2:Persona)
+ObjectPropertyRange(practica_2:esAscendenteDe practica_2:Persona)
+
+# Object Property: practica_2:esDescendienteDe (practica_2:esDescendienteDe)
+
+SubObjectPropertyOf(practica_2:esDescendienteDe owl:topObjectProperty)
+TransitiveObjectProperty(practica_2:esDescendienteDe)
+ObjectPropertyDomain(practica_2:esDescendienteDe practica_2:Persona)
+
+# Object Property: practica_2:esHermanoDe (practica_2:esHermanoDe)
+
+SubObjectPropertyOf(practica_2:esHermanoDe owl:topObjectProperty)
+SymmetricObjectProperty(practica_2:esHermanoDe)
+IrreflexiveObjectProperty(practica_2:esHermanoDe)
+ObjectPropertyDomain(practica_2:esHermanoDe practica_2:Persona)
+ObjectPropertyRange(practica_2:esHermanoDe practica_2:Persona)
+
+# Object Property: practica_2:esHijaDe (practica_2:esHijaDe)
+
+SubObjectPropertyOf(practica_2:esHijaDe practica_2:esDescendienteDe)
+ObjectPropertyDomain(practica_2:esHijaDe practica_2:Mujer)
+ObjectPropertyRange(practica_2:esHijaDe practica_2:Persona)
+
+# Object Property: practica_2:esHijoDe (practica_2:esHijoDe)
+
+SubObjectPropertyOf(practica_2:esHijoDe practica_2:esDescendienteDe)
+ObjectPropertyDomain(practica_2:esHijoDe practica_2:Hombre)
+ObjectPropertyRange(practica_2:esHijoDe practica_2:Persona)
+
+# Object Property: practica_2:esMadreDe (practica_2:esMadreDe)
+
+SubObjectPropertyOf(practica_2:esMadreDe practica_2:esAscendenteDe)
+ObjectPropertyDomain(practica_2:esMadreDe practica_2:Mujer)
+ObjectPropertyRange(practica_2:esMadreDe practica_2:Persona)
+
+# Object Property: practica_2:esPadreDe (practica_2:esPadreDe)
+
+SubObjectPropertyOf(practica_2:esPadreDe practica_2:esAscendenteDe)
+ObjectPropertyDomain(practica_2:esPadreDe practica_2:Hombre)
+ObjectPropertyRange(practica_2:esPadreDe practica_2:Persona)
+
+# Object Property: practica_2:esParejaDe (practica_2:esParejaDe)
+
+SubObjectPropertyOf(practica_2:esParejaDe owl:topObjectProperty)
+SymmetricObjectProperty(practica_2:esParejaDe)
+IrreflexiveObjectProperty(practica_2:esParejaDe)
+ObjectPropertyDomain(practica_2:esParejaDe practica_2:Persona)
+ObjectPropertyRange(practica_2:esParejaDe practica_2:Persona)
+
+# Object Property: practica_2:tieneGenero (practica_2:tieneGenero)
+
+FunctionalObjectProperty(practica_2:tieneGenero)
+ObjectPropertyDomain(practica_2:tieneGenero practica_2:Persona)
+ObjectPropertyRange(practica_2:tieneGenero practica_2:Genero)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: practica_2:edad (practica_2:edad)
+
+FunctionalDataProperty(practica_2:edad)
+DataPropertyDomain(practica_2:edad practica_2:Persona)
+DataPropertyRange(practica_2:edad xsd:integer)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: practica_2:Genero (practica_2:Genero)
+
+EquivalentClasses(practica_2:Genero ObjectOneOf(practica_2:Femenino practica_2:Masculino))
+
+# Class: practica_2:Hombre (practica_2:Hombre)
+
+EquivalentClasses(practica_2:Hombre ObjectIntersectionOf(practica_2:Persona ObjectHasValue(practica_2:tieneGenero practica_2:Masculino)))
+
+# Class: practica_2:Madre (practica_2:Madre)
+
+EquivalentClasses(practica_2:Madre ObjectIntersectionOf(practica_2:Mujer ObjectSomeValuesFrom(practica_2:esAscendenteDe practica_2:Persona)))
+
+# Class: practica_2:Mujer (practica_2:Mujer)
+
+EquivalentClasses(practica_2:Mujer ObjectIntersectionOf(practica_2:Persona ObjectHasValue(practica_2:tieneGenero practica_2:Femenino)))
+
+# Class: practica_2:Padre (practica_2:Padre)
+
+EquivalentClasses(practica_2:Padre ObjectIntersectionOf(practica_2:Hombre ObjectSomeValuesFrom(practica_2:esAscendenteDe practica_2:Persona)))
+
+# Class: practica_2:Persona (practica_2:Persona)
+
+SubClassOf(practica_2:Persona DataSomeValuesFrom(practica_2:edad xsd:integer))
+
+# Class: practica_2:PersonaMayor65 (practica_2:PersonaMayor65)
+
+EquivalentClasses(practica_2:PersonaMayor65 ObjectIntersectionOf(practica_2:Persona DataSomeValuesFrom(practica_2:edad DatatypeRestriction(xsd:integer xsd:minExclusive "65"^^xsd:integer))))
+
+# Class: practica_2:PersonaMenorEdad (practica_2:PersonaMenorEdad)
+
+EquivalentClasses(practica_2:PersonaMenorEdad ObjectIntersectionOf(practica_2:Persona DataSomeValuesFrom(practica_2:edad DatatypeRestriction(xsd:integer xsd:maxExclusive "18"^^xsd:integer))))
+
+# Class: practica_2:tieneDescendenciaYpareja (practica_2:tieneDescendenciaYpareja)
+
+EquivalentClasses(practica_2:tieneDescendenciaYpareja ObjectIntersectionOf(practica_2:Persona ObjectSomeValuesFrom(practica_2:esAscendenteDe practica_2:Persona) ObjectSomeValuesFrom(practica_2:esParejaDe practica_2:Persona)))
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: practica_2:Eugenia (practica_2:Eugenia)
+
+ObjectPropertyAssertion(practica_2:esMadreDe practica_2:Eugenia practica_2:Lucia)
+ObjectPropertyAssertion(practica_2:esParejaDe practica_2:Eugenia practica_2:Pedro)
+DataPropertyAssertion(practica_2:edad practica_2:Eugenia "72"^^xsd:integer)
+
+# Individual: practica_2:Femenino (practica_2:Femenino)
+
+ClassAssertion(practica_2:Genero practica_2:Femenino)
+
+# Individual: practica_2:Juan (practica_2:Juan)
+
+ObjectPropertyAssertion(practica_2:esPadreDe practica_2:Juan practica_2:Luis)
+ObjectPropertyAssertion(practica_2:esPadreDe practica_2:Juan practica_2:Maria)
+ObjectPropertyAssertion(practica_2:esPadreDe practica_2:Juan practica_2:Sandra)
+ObjectPropertyAssertion(practica_2:esParejaDe practica_2:Juan practica_2:Lucia)
+DataPropertyAssertion(practica_2:edad practica_2:Juan "52"^^xsd:integer)
+
+# Individual: practica_2:Lucia (practica_2:Lucia)
+
+ObjectPropertyAssertion(practica_2:esHijaDe practica_2:Lucia practica_2:Eugenia)
+ObjectPropertyAssertion(practica_2:esHijaDe practica_2:Lucia practica_2:Pedro)
+ObjectPropertyAssertion(practica_2:esMadreDe practica_2:Lucia practica_2:Luis)
+ObjectPropertyAssertion(practica_2:esMadreDe practica_2:Lucia practica_2:Maria)
+ObjectPropertyAssertion(practica_2:esMadreDe practica_2:Lucia practica_2:Sandra)
+ObjectPropertyAssertion(practica_2:esParejaDe practica_2:Lucia practica_2:Juan)
+DataPropertyAssertion(practica_2:edad practica_2:Lucia "49"^^xsd:integer)
+
+# Individual: practica_2:Luis (practica_2:Luis)
+
+ObjectPropertyAssertion(practica_2:esHermanoDe practica_2:Luis practica_2:Maria)
+ObjectPropertyAssertion(practica_2:esHijoDe practica_2:Luis practica_2:Juan)
+DataPropertyAssertion(practica_2:edad practica_2:Luis "24"^^xsd:integer)
+
+# Individual: practica_2:Maria (practica_2:Maria)
+
+ObjectPropertyAssertion(practica_2:esHermanoDe practica_2:Maria practica_2:Sandra)
+ObjectPropertyAssertion(practica_2:esHijaDe practica_2:Maria practica_2:Lucia)
+DataPropertyAssertion(practica_2:edad practica_2:Maria "17"^^xsd:integer)
+
+# Individual: practica_2:Masculino (practica_2:Masculino)
+
+ClassAssertion(practica_2:Genero practica_2:Masculino)
+
+# Individual: practica_2:Pedro (practica_2:Pedro)
+
+ObjectPropertyAssertion(practica_2:esPadreDe practica_2:Pedro practica_2:Lucia)
+ObjectPropertyAssertion(practica_2:esParejaDe practica_2:Pedro practica_2:Eugenia)
+DataPropertyAssertion(practica_2:edad practica_2:Pedro "75"^^xsd:integer)
+
+# Individual: practica_2:Sandra (practica_2:Sandra)
+
+ObjectPropertyAssertion(practica_2:esHermanoDe practica_2:Sandra practica_2:Luis)
+ObjectPropertyAssertion(practica_2:esHijaDe practica_2:Sandra practica_2:Lucia)
+DataPropertyAssertion(practica_2:edad practica_2:Sandra "16"^^xsd:integer)
+
+
+)
